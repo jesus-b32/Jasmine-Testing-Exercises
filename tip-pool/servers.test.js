@@ -15,11 +15,11 @@ describe("Servers test (with setup and tear-down)", function() {
     submitServerInfo();
     updateServerTable();
 
-    const curTdList = document.querySelectorAll('#serverTable tbody tr td');// selecting all element of table row
+    const tdList = document.querySelectorAll('#serverTable tbody tr td');// selecting all element of table row
 
-    expect(curTdList.length).toEqual(2);
-    expect(curTdList[0].innerText).toEqual('Alice');
-    expect(curTdList[1].innerText).toEqual('$0.00');
+    expect(tdList.length).toEqual(2);
+    expect(tdList[0].innerText).toEqual('Alice');
+    expect(tdList[1].innerText).toEqual('$0.00');
   })
 
 
