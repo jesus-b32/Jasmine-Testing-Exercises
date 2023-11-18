@@ -24,3 +24,11 @@ function appendTd(tr, value) {
 
   tr.append(newTd);
 }
+
+// expects a table row element, appends 'X' value to new TD element
+function appendDeleteBtn(tr){
+  let newTd = document.createElement('td');
+  newTd.innerText = 'X';
+
+  tr.append(newTd);
+}

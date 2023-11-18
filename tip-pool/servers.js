@@ -7,6 +7,7 @@ let allServers = {};
 let serverId = 0;
 
 serverForm.addEventListener('submit', submitServerInfo);
+serverTbody.addEventListener('click', deleteRow);
 
 // create server object and add to allServers, update html and reset input
 function submitServerInfo(evt) {
@@ -24,6 +25,15 @@ function submitServerInfo(evt) {
   }
 }
 
+function deleteRow(e){
+  //console.log(e.target);
+  if(e.target.innerText === 'X'){
+    const rowId = e.target.parentElement.id;
+    e.target.parentElement.remove();
+    delete allServers[rowId];
+  }
+}
+
 // Create table row element and pass to appendTd function with input value
 function updateServerTable() {
   serverTbody.innerHTML = '';
@@ -38,6 +48,7 @@ function updateServerTable() {
 
     appendTd(newTr, curServer.serverName);
     appendTd(newTr, '$' + tipAverage.toFixed(2));
+    appendDeleteBtn(newTr);
 
     serverTbody.append(newTr);
   }

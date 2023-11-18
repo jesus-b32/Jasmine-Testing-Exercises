@@ -17,9 +17,10 @@ describe("Servers test (with setup and tear-down)", function() {
 
     const tdList = document.querySelectorAll('#serverTable tbody tr td');// selecting all element of table row
 
-    expect(tdList.length).toEqual(2);
+    expect(tdList.length).toEqual(3);
     expect(tdList[0].innerText).toEqual('Alice');
     expect(tdList[1].innerText).toEqual('$0.00');
+    expect(tdList[2].innerText).toEqual('X');
   })
 
 

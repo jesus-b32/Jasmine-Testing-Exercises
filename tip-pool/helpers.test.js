@@ -39,6 +39,15 @@ describe("Helpers test (with setup and tear-down)", function() {
       expect(newTr.firstChild.innerText = 'hello');
 
     });
+
+
+    it('should append table row element "X" to serverTbody table', function(){
+      const newTr = document.createElement('tr');
+      appendDeleteBtn(newTr);
+
+      expect(newTr.children.length).toEqual(1);
+      expect(newTr.firstChild.innerText = 'X');
+    })
   
     afterEach(function() {
       // teardown logic
